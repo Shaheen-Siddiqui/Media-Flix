@@ -1,0 +1,16 @@
+.message-container {
+    color: white;
+    margin: 20% auto;
+
+    & h1{
+        letter-spacing: 1px;
+    }
+    & button {
+        padding: 10px 15px;
+        background-image: linear-gradient(#002D62, var(--primary-color));
+        font-weight: bolder;
+        font-family: 'PT Serif', serif;
+        margin-top: 1rem;
+        border-radius: var(--radius);
+    }
+}

@@ -1,0 +1,29 @@
+.video-container {
+    position: relative;
+
+    & figcaption{
+        display: flex;
+        gap: 1rem;
+
+        & img{
+            height: 5rem;
+            width: 5rem;
+            border: 2px solid var(--text-color);
+            border-radius: 3rem;
+        }
+        & span{
+            text-align: left;
+            color: var(--primary-color);
+
+        }
+    }
+}
+
+.stop-watch {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}

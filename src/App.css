@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Handjet:wght@300&family=Inconsolata:wght@300&family=Lumanosimo&family=Noto+Serif:wght@300&family=PT+Serif&family=Playfair+Display&family=Playfair:wght@300&family=Teko:wght@300&family=Tilt+Prism&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #000000;
+  --primary-color: #3E065F;
+  --secondary-color: #700B97;
+  --radius: 0.5rem;
+  --box-shadow: rgba(231, 231, 239, 0.916) 0px 7px 29px 0px;
+  --three-dimention: rgba(242, 241, 246, 0.885) 0px 48px 100px 0px;
+  --text-color: #8E05C2
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'PT Serif', serif;
+  background-color: #000000;
+
+}
+
+button {
+  cursor: pointer;
+}
+
+
+.right-side-components {
+  margin-top: 19%;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (min-width:767px) {
+  .right-side-components {
+    /* border: 1px solid green; */
+    margin-top: 7.5rem;
+    margin-left: 28%;
+  }
+}
+
+@media (min-width:1025px) {
+  .right-side-components{
+    margin-left: 14%;
+  }
+}
+
+@media (min-width:530px) {
+
+  /* h1{
+  font-size:24px;
+  } */
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vw;
+  margin-block: 0.25em;
+  background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 100vw;
+}

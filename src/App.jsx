@@ -1,5 +1,6 @@
 import { useState, lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+import {Toaster} from 'react-hot-toast'
 
 import "./App.css";
 
@@ -19,6 +20,32 @@ function App() {
   return (
     <div>
       <Suspense fallback="Loading...">
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            // Define default options
+            className: "",
+            duration: 3000,
+            style: {
+              background: "#363636",
+              color: "#fff",
+              fontSize:'2rem'
+            },
+
+            // Default options for specific types
+            success: {
+              duration: 3000,
+              theme: {
+                primary: "green",
+                secondary: "black",
+              },
+            },
+          }}
+        />
         <Header setToggleSidebar={setToggleSidebar} />
 
         <Sidebar

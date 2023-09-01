@@ -1,16 +1,16 @@
-import React, { useState } from 'react'
-import Category from '../../components/category/Category'
-import SingleVideoDetail from '../singleVideoDetail/SingleVideoDetail'
+//External Imports
+//Internal Imports
+import SingleVideoDetail from "../singleVideoDetail/SingleVideoDetail";
+import Category from "../../components/category/Category";
 
 const Home = () => {
+
   return (
     <div>
-      <Category/>
+      <Category />
       {/* <SingleVideoDetail/> */}
-
-     
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

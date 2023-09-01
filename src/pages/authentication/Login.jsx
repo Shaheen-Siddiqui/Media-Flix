@@ -1,19 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaRegMehRollingEyes } from "react-icons/fa";
 import { PiSmileyXEyesBold } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
 
+import {
+  emailPasswordLogin,
+  authdb,
+} from "../../store/redux-operation/auth/auth-action";
 import "./Authentication.css";
+import { useSelector } from "react-redux";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const [loginCredentials, setLoginCredentials] = useState({
     email: "",
     password: "",
   });
-  const [showPassword, setShowPassword] = useState(false);
+  const { isLogIn } = useSelector((state) => state.auth);
+  
+  const { email, password } = loginCredentials;
   const navigate = useNavigate();
 
   const loginHandler = (event) => {
+    emailPasswordLogin(email, password, isLogIn, navigate);
     event.preventDefault();
   };
 
@@ -72,7 +82,11 @@ const Login = () => {
             </span>
           </div>
 
-          <button className="input-box submit-btn" onClick={guestCredentials}>
+          <button
+            className="input-box submit-btn"
+            type="button"
+            onClick={guestCredentials}
+          >
             Use Guest Credentials
           </button>
 

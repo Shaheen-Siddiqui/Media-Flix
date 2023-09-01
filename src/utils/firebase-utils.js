@@ -1,6 +1,5 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
 import { initializeApp } from "firebase/app";
+
 //*-------------------------------------------------------------------*//
 
 const firebaseConfig = {
@@ -15,12 +14,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
-const db = getDatabase(app);
-const authdb=getAuth(app);
-
-// export const emailPasswordAuthentication=(email, password)=>{
-//   return createUserWithEmailAndPassword(authdb, email, password)
-// }
-
-

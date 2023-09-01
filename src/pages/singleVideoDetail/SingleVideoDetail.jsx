@@ -4,8 +4,8 @@ import { BsStopwatch } from "react-icons/bs";
 import { PiPlaylistBold, PiNotepadBold } from "react-icons/pi";
 
 import "./SingleVideoDetail.css";
-import NoteModal from "../../components/ModalBox/NoteModal";
-import PlaylistModal from "../../components/ModalBox/PlaylistModal";
+import NoteModal from "../../components/modalBox/NoteModal";
+import PlaylistModal from "../../components/modalBox/PlaylistModal";
 
 const SingleVideoDetail = () => {
   const [showNoteModal, setShowNoteModal] = useState(false);

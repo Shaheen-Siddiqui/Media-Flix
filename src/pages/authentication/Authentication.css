@@ -71,7 +71,14 @@
     }
 }
 
-@media (min-width:767px) {
+@media (width:767px) {
+    .auth-main-case {
+        width: 80%;
+        margin-top: 10%;
+    }
+}
+
+@media (min-width:1024px) {
     .auth-main-case {
         width: 40%;
         margin-top: 10%;

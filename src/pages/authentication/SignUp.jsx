@@ -1,7 +1,7 @@
 //External Imports
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FaRegMehRollingEyes } from "react-icons/fa";
 import { PiSmileyXEyesBold } from "react-icons/pi";
 
@@ -19,17 +19,17 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const {
-    userInputDetails,
+    isLogIn,
     userInputDetails: { name, email, lastname, password, confirmpassword },
   } = useSelector((state) => state.auth);
-  const { SAVE_USER_INPUT_DETAILS } = authConstants;
+  const { SAVE_USER_INPUT_DETAILS, CLEAR_INPUT_FIELD } = authConstants;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const signupHandler = (event) => {
     event.preventDefault();
-    emailPasswordSignup(email, password, confirmpassword, navigate);
+    emailPasswordSignup(email, password, confirmpassword, navigate, dispatch);
   };
 
   const inputHandler = (event) => {

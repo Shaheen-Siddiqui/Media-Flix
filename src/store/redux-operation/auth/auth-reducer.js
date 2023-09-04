@@ -1,8 +1,12 @@
 import { authConstants } from "./auth-constants";
 
-const { SAVE_USER_INPUT_DETAILS, CLEAR_INPUT_FIELD } = authConstants;
+const { SAVE_USER_INPUT_DETAILS, CLEAR_INPUT_FIELD, USER_LOGIN, SIGN_OUT } =
+  authConstants;
 
 const initialState = {
+  
+  isLogIn: null,
+
   userInputDetails: {
     name: "",
     email: "",
@@ -10,7 +14,6 @@ const initialState = {
     password: "",
     confirmpassword: "",
   },
-  isLogIn: null,
 };
 
 export const AuthReducer = (state = initialState, { type, payload }) => {
@@ -25,22 +28,27 @@ export const AuthReducer = (state = initialState, { type, payload }) => {
         },
       };
 
-    case "USER_LOGIN":
+    case USER_LOGIN:
       return {
         ...state,
         isLogIn: payload,
       };
-    // case CLEAR_INPUT_FIELD:
-    //   return {
-    //     ...state,
-    //     userInputDetails: {
-    //       name: "",
-    //       email: "",
-    //       lastname: "",
-    //       password: "",
-    //       confirmpassword: "",
-    //     },
-    //   };
+    case SIGN_OUT:
+      return {
+        ...state,
+        isLogIn: null,
+      };
+    case CLEAR_INPUT_FIELD:
+      return {
+        ...state,
+        userInputDetails: {
+          name: "",
+          email: "",
+          lastname: "",
+          password: "",
+          confirmpassword: "",
+        },
+      };
 
     default:
       return state;

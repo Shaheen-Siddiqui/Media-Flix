@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaRegMehRollingEyes } from "react-icons/fa";
 import { PiSmileyXEyesBold } from "react-icons/pi";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 
 import {
@@ -9,7 +9,7 @@ import {
   authdb,
 } from "../../store/redux-operation/auth/auth-action";
 import "./Authentication.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,13 +18,16 @@ const Login = () => {
     password: "",
   });
   const { isLogIn } = useSelector((state) => state.auth);
-  
+  const dispatch = useDispatch();
+
   const { email, password } = loginCredentials;
   const navigate = useNavigate();
 
+
   const loginHandler = (event) => {
-    emailPasswordLogin(email, password, isLogIn, navigate);
+    emailPasswordLogin(email, password, navigate, dispatch);
     event.preventDefault();
+    event.stopPropagation();
   };
 
   const inputHandler = (event) => {

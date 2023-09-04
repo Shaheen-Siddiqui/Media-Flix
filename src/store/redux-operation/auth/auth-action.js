@@ -7,41 +7,43 @@ import {
 } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
 import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 //Internal Imports
 import { app } from "../../../utils/firebase-utils";
+import { authConstants } from "./auth-constants";
+import { useSelector } from "react-redux";
+import { ActionCreator } from "../../../utils/action-creator";
 //*-----------------------------------------------*//
 
 const db = getDatabase(app);
 export const authdb = getAuth(app);
+const { CLEAR_INPUT_FIELD, USER_LOGIN } = authConstants;
 
 export const emailPasswordSignup = async (
   email,
   password,
   confirmpassword,
+  navigate,
+  dispatch,
   
-  navigate
 ) => {
   if (password.length < 6) {
     toast.error("Password should be at least 6 characters");
   } else if (password !== confirmpassword) {
-    toast.error("password do not matched");
+    toast.error("Password does not match");
   } else {
     try {
-      await createUserWithEmailAndPassword(
-        authdb,
-        email,
-        password,
-        
-      );
+      await createUserWithEmailAndPassword(authdb, email, password);
       toast.success(
         "Congratulations! Your account has been successfully created."
       );
-      navigate("/");
+
+      dispatch({ type: CLEAR_INPUT_FIELD });
+      navigate(-2);
     } catch (error) {
-      console.log(error.code);
-      toast.error("failed! email-already-in-use >_<");
+      console.log(error);
+      toast.error("Failed! Email is already in use >_<");
     }
   }
 };
@@ -49,13 +51,15 @@ export const emailPasswordSignup = async (
 export const emailPasswordLogin = async (
   email,
   password,
-  isLogIn,
-  navigate
+  navigate,
+  dispatch,
+  
 ) => {
   try {
     await signInWithEmailAndPassword(authdb, email, password);
-    toast.success(`Welcome Back ${loggedIn?.displayName}`);
-    navigate("/");
+    dispatch(ActionCreator(USER_LOGIN, email));
+    toast.success(`Welcome Back ${email}`);
+    navigate(-1, );
   } catch (error) {
     toast.error(error.code);
   }

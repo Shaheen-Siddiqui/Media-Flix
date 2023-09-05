@@ -7,10 +7,14 @@ import SingleVideoDetail from "../singleVideoDetail/SingleVideoDetail";
 import Category from "../../components/category/Category";
 
 const Home = () => {
+  const { ycCategoryCase } = useSelector((state) => state.video);
 
   return (
     <div>
-      <Category />
+      {ycCategoryCase.map((item, index) => {
+        return <Category key={index} item={item} />;
+      })}
+
       {/* <SingleVideoDetail/> */}
     </div>
   );

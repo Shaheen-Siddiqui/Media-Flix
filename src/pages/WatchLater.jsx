@@ -1,15 +1,21 @@
-import React from 'react'
-import Video from '../components/video/Video'
-import EmptyCaseMessages from '../components/emptyCaseMessages/EmptyCaseMessages'
+import React from "react";
+import Video from "../components/video/Video";
+import EmptyCaseMessages from "../components/emptyCaseMessages/EmptyCaseMessages";
+import { useSelector } from "react-redux";
 
 const WatchLater = () => {
+  const { watchlaterCase } = useSelector((state) => state.video);
   return (
     <div>
-      <Video/>
-      <EmptyCaseMessages message="Marked any video into Watchlater" buttonMessage="Mark Now"/>
-
+      {watchlaterCase.map((item) => {
+        return <Video key={item._id} item={item} ExploreCaseHeight/>;
+      })}
+      {/* <EmptyCaseMessages
+        message="Marked any video into Watchlater"
+        buttonMessage="Mark Now"
+      /> */}
     </div>
-  )
-}
+  );
+};
 
-export default WatchLater
+export default WatchLater;

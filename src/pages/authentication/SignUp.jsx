@@ -13,16 +13,16 @@ import {
   googleAuthentication,
 } from "../../store/redux-operation/auth/auth-action";
 import { authConstants } from "../../store/redux-operation/auth/auth-constants";
-// *---------------------------------------------------------------------------*
+// *---------------------------------------------------------------------------* //
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const {
-    isLogIn,
     userInputDetails: { name, email, lastname, password, confirmpassword },
   } = useSelector((state) => state.auth);
-  const { SAVE_USER_INPUT_DETAILS, CLEAR_INPUT_FIELD } = authConstants;
+
+  const { SAVE_USER_INPUT_DETAILS } = authConstants;
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -48,7 +48,6 @@ const SignUp = () => {
           />
           <h2>Sign Up</h2>
         </div>
-
         <div className="input-box-case">
           <input
             required

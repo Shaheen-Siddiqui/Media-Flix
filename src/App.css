@@ -41,15 +41,14 @@ a {
 
 @media (min-width:767px) {
   .right-side-components {
-    /* border: 1px solid green; */
     margin-top: 7.5rem;
     margin-left: 28%;
   }
 }
 
-@media (min-width:1025px) {
+@media (min-width:1024px) {
   .right-side-components{
-    margin-left: 14%;
+    margin-left: 15%;
   }
 }
 

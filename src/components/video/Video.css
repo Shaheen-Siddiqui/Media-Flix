@@ -26,4 +26,22 @@
     margin: 1.5rem;
     cursor: pointer;
     color: var(--primary-color);
+    background-color: rgba(241, 243, 244, 0.392);
+    border-radius: var(--radius);
+    box-shadow: var(--three-dimention);
 }
+
+.stop-watch:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.stop-watch:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.stop-watch:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+  

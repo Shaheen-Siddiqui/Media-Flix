@@ -1,31 +1,60 @@
 import React from "react";
 import { BsStopwatch, BsStopwatchFill } from "react-icons/bs";
 
+import { useDispatch, useSelector } from "react-redux";
+
+//Internal Import
 import "./Video.css";
 import "../category/Category.css";
+import { ActionCreator } from "../../utils/action-creator";
+import { videoConstant } from "../../store/redux-operation/video/video-constants";
+import { isWatchLaterImage } from "../../store/redux-operation/video/video-action";
+// *****************************************************//
 
-const Video = () => {
+const Video = (props) => {
+  const dispatch = useDispatch();
+  const { WATCHLATER_ITEMS } = videoConstant;
+  const { watchlaterCase } = useSelector((state) => state.video);
+
+  const { item, ExploreCaseHeight } = props;
+  const {
+    _id,
+    title,
+    views,
+    thumbnail,
+    src,
+    category,
+    creator,
+    videoThumbnail,
+  } = item;
+
+  const checkisWatchLaterImage = isWatchLaterImage(_id, watchlaterCase);
+
   return (
-    <figure className="figure-img video-container">
-      <img
-        className="category-url"
-        src="https://media.gettyimages.com/id/1128396650/vector/origami-bird-design.jpg?s=612x612&w=gi&k=20&c=nfXh8wIZP3XX43eqQvjsTHzfb20WXYi7oCfLEpWfW9o="
-        alt="Description of the image"
-      />
-      <figcaption>
-        <img
-          src="https://www.thesprucecrafts.com/thmb/N1i8ehyYdPkx9xgMkwq61-kaxkU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/origami-traditional-crow-00-57e4b75f3df78c690ff8a8a5.jpg"
-          alt="origami"
-          className="holder-img"
-        />
+    <figure
+      className="figure-img video-container"
+      id={`${ExploreCaseHeight && "auto-height"}`}
+    >
+      <img className="category-url" src={videoThumbnail} alt={title} />
+
+      <figcaption id={`${ExploreCaseHeight && "auto-height-caption"}`}>
+        <img src={thumbnail} alt="origami" className="holder-img" />
         <span>
-          <h3>Lorem ipsum dolor, sit amet consectetur adipisicing </h3>
-          <p>Origami|| viewers paper craft</p>
+          <h3>{title} </h3>
+          <p>
+            {category} || {views}
+          </p>
         </span>
       </figcaption>
-      <span className="stop-watch">
-        <BsStopwatch size={35} />
-        {/* <BsStopwatchFill size={40}/> */}
+      <span
+        className="stop-watch"
+        onClick={() => dispatch(ActionCreator(WATCHLATER_ITEMS, item))}
+      >
+        {checkisWatchLaterImage ? (
+          <BsStopwatchFill size={30} />
+          ) : (
+            <BsStopwatch size={30} />
+        )}
       </span>
     </figure>
   );

@@ -9,8 +9,8 @@
     text-align: center;
 
     & img {
+        height: 26rem;
         max-width: 100%;
-        height: auto;
         border-radius: 5px 5px 0 0;
     }
 
@@ -18,19 +18,27 @@
         padding: 10px;
         background-color: #f5f5f5;
         border-radius: 0 0 5px 5px;
+        height: auto;
     }
+}
+
+#auto-height-caption {
+    height: 12rem;
 }
 
 @media (min-width:767px) {
     .figure-img {
-      width: 50%;
+        width: 50%;
     }
-  
 }
 
 @media (min-width:1024px) {
     .figure-img {
-      width: 23%;
+        width: 23%;
     }
-  
+
+    #auto-height {
+        height: fit-content;
+    }
+
 }

@@ -8,20 +8,21 @@ import { signOut, onAuthStateChanged } from "firebase/auth";
 import { authdb } from "../../store/redux-operation/auth/auth-action";
 import { ActionCreator } from "../../utils/action-creator";
 import { authConstants } from "../../store/redux-operation/auth/auth-constants";
+import { videoConstant } from "../../store/redux-operation/video/video-constants";
 
 const Header = ({ setToggleSidebar }) => {
-
   const { SIGN_OUT, USER_LOGIN } = authConstants;
+  const { SEARCH } = videoConstant;
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isLogIn } = useSelector((state) => state.auth);
+  const { search } = useSelector((state) => state.video);
 
   const signOutUser = () => {
     navigate("/login");
     signOut(authdb);
     dispatch(ActionCreator(SIGN_OUT));
   };
-
 
   useEffect(() => {
     onAuthStateChanged(authdb, (user) => {
@@ -32,8 +33,6 @@ const Header = ({ setToggleSidebar }) => {
       }
     });
   }, []);
-  
-
 
   return (
     <header className="header-case">
@@ -53,9 +52,13 @@ const Header = ({ setToggleSidebar }) => {
       </div>
       <div className="icon-case">
         <input
+          value={search}
           type="text"
           className="search-input"
-          placeholder="search by name"
+          placeholder="search by Title"
+          onChange={(event) =>
+            dispatch(ActionCreator(SEARCH, event.target.value))
+          }
         />
         <span>
           <FontAwesomeIcon

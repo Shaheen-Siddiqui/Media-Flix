@@ -11,6 +11,7 @@ import { authConstants } from "../../store/redux-operation/auth/auth-constants";
 import { videoConstant } from "../../store/redux-operation/video/video-constants";
 
 const Header = ({ setToggleSidebar }) => {
+
   const { SIGN_OUT, USER_LOGIN } = authConstants;
   const { SEARCH } = videoConstant;
   const navigate = useNavigate();
@@ -50,24 +51,27 @@ const Header = ({ setToggleSidebar }) => {
         />
         <h2>MediaFlix</h2>
       </div>
-      <div className="icon-case">
-        <input
-          value={search}
-          type="text"
-          className="search-input"
-          placeholder="search by Title"
-          onChange={(event) =>
-            dispatch(ActionCreator(SEARCH, event.target.value))
-          }
-        />
-        <span>
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
-            size="xl"
-            className="search-icon"
+
+      {window.location.pathname==='/explore' && (
+        <div className="icon-case">
+          <input
+            value={search}
+            type="text"
+            className="search-input"
+            placeholder="Search By Title..."
+            onChange={(event) =>
+              dispatch(ActionCreator(SEARCH, event.target.value))
+            }
           />
-        </span>
-      </div>
+          <span>
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              size="xl"
+              className="search-icon"
+            />
+          </span>
+        </div>
+      )}
       <div className="right-nav">
         <h3>Explore</h3>
         {!isLogIn ? (

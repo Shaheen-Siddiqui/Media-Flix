@@ -37,11 +37,11 @@ export const videoCategoryList = [
     thumbnail: "https://i.ytimg.com/vi/dJ_yQa_hbdM/maxresdefault.jpg",
     category: "Women Parda",
   },
-  {
-    _id: uuid(),
-    thumbnail: "https://i.ytimg.com/vi/5uF3tVS6Ers/maxresdefault.jpg",
-    category: "Lower your Gaze!",
-  },
+  // {
+  //   _id: uuid(),
+  //   thumbnail: "https://i.ytimg.com/vi/5uF3tVS6Ers/maxresdefault.jpg",
+  //   category: "Lower your Gaze!",
+  // },
   {
     _id: uuid(),
     thumbnail: "https://i.ytimg.com/vi/_vCDJQGLr7M/maxresdefault.jpg",

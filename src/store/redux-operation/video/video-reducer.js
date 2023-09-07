@@ -7,9 +7,10 @@ const initialState = {
   ycCategoryCase: videoCategoryList,
   watchlaterCase: [],
   search: "",
+  selectedCategory: {},
 };
 
-const { SEARCH, WATCHLATER_ITEMS } = videoConstant;
+const { SEARCH, WATCHLATER_ITEMS, SELECTED_CATEGORY } = videoConstant;
 
 export const VideoReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -28,6 +29,11 @@ export const VideoReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         watchlaterCase: isInsideWatchLater,
+      };
+    case SELECTED_CATEGORY:
+      return {
+        ...state,
+        selectedCategory: payload,
       };
     default:
       return state;

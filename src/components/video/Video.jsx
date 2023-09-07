@@ -9,10 +9,12 @@ import "../category/Category.css";
 import { ActionCreator } from "../../utils/action-creator";
 import { videoConstant } from "../../store/redux-operation/video/video-constants";
 import { isWatchLaterImage } from "../../store/redux-operation/video/video-action";
+import { useNavigate } from "react-router";
 // *****************************************************//
 
-const Video = (props) => {
+export const Video = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { WATCHLATER_ITEMS } = videoConstant;
   const { watchlaterCase } = useSelector((state) => state.video);
 
@@ -35,7 +37,12 @@ const Video = (props) => {
       className="figure-img video-container"
       id={`${ExploreCaseHeight && "auto-height"}`}
     >
-      <img className="category-url" src={videoThumbnail} alt={title} />
+      <img
+        className="category-url"
+        src={videoThumbnail}
+        alt={title}
+        onClick={() => navigate(`/video-detail/${_id}`)}
+      />
 
       <figcaption id={`${ExploreCaseHeight && "auto-height-caption"}`}>
         <img src={thumbnail} alt="origami" className="holder-img" />
@@ -52,8 +59,8 @@ const Video = (props) => {
       >
         {checkisWatchLaterImage ? (
           <BsStopwatchFill size={30} />
-          ) : (
-            <BsStopwatch size={30} />
+        ) : (
+          <BsStopwatch size={30} />
         )}
       </span>
     </figure>

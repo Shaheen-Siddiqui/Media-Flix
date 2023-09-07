@@ -1,12 +1,23 @@
 import React from "react";
 import "./Category.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { ActionCreator } from "../../utils/action-creator";
+import { videoConstant } from "../../store/redux-operation/video/video-constants";
+import { useNavigate } from "react-router";
 
-const Category = ({item}) => {
-  const {_id, thumbnail, category}=item
+const Category = ({ item }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { SELECTED_CATEGORY } = videoConstant;
+  const { _id, thumbnail, category } = item;
   return (
     <figure className="figure-img">
       <img
+        onClick={() => {
+          dispatch(ActionCreator(SELECTED_CATEGORY, item));
+          navigate(`/category/${category}`);
+        }}
         className="category-url"
         src={thumbnail}
         alt={category}

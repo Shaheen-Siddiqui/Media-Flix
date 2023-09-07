@@ -10,7 +10,8 @@ const initialState = {
   selectedCategory: {},
 };
 
-const { SEARCH, WATCHLATER_ITEMS, SELECTED_CATEGORY } = videoConstant;
+const { SEARCH, WATCHLATER_ITEMS, SELECTED_CATEGORY, LIKED_VIDEO } =
+  videoConstant;
 
 export const VideoReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -21,7 +22,7 @@ export const VideoReducer = (state = initialState, { type, payload }) => {
       };
     case WATCHLATER_ITEMS:
       const isInsideWatchLater =
-        state.watchlaterCase.find((item) => item._id == payload._id) ==
+        state.watchlaterCase.find((item) => item._id == payload?._id) ==
         undefined
           ? [...state.watchlaterCase, payload]
           : state.watchlaterCase.filter((item) => item._id != payload._id);
@@ -35,6 +36,21 @@ export const VideoReducer = (state = initialState, { type, payload }) => {
         ...state,
         selectedCategory: payload,
       };
+
+    case LIKED_VIDEO:
+      // const islike=state.ycVideoCase.map((item) =>
+      // item._id == payload)
+
+      // console.log(islike);
+      return {
+        ...state,
+        ycVideoCase: state.ycVideoCase.map((item) =>
+          item._id == payload
+            ? { ...item, liked: !item.liked }
+            : { ...item, liked: false }
+        ),
+      };
+
     default:
       return state;
   }

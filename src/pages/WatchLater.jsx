@@ -7,13 +7,17 @@ const WatchLater = () => {
   const { watchlaterCase } = useSelector((state) => state.video);
   return (
     <div>
-      {watchlaterCase.map((item) => {
-        return <Video key={item._id} item={item} ExploreCaseHeight/>;
-      })}
-      {/* <EmptyCaseMessages
-        message="Marked any video into Watchlater"
-        buttonMessage="Mark Now"
-      /> */}
+      {!watchlaterCase.length ? (
+        <EmptyCaseMessages
+          message="Marked any video into Watchlater"
+          buttonMessage="Mark Now"
+          navigateTo="/explore"
+        />
+      ) : (
+        watchlaterCase.map((item) => {
+          return <Video key={item._id} item={item} ExploreCaseHeight />;
+        })
+      )}
     </div>
   );
 };

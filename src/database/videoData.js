@@ -42,7 +42,6 @@ export const YouthclubVideoList = [
     thumbnail: Tuaha_ibn_Jalil,
     src: "https://youtu.be/fYSpiOb1YWk",
     category: "Tahajjud prayer",
-    videoThumbnail: "",
     creator: tuaha,
     videoThumbnail: "https://i.ytimg.com/vi/fYSpiOb1YWk/maxresdefault.jpg",
   },

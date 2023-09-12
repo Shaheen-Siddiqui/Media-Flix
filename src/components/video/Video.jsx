@@ -1,5 +1,6 @@
 import React from "react";
 import { BsStopwatch, BsStopwatchFill } from "react-icons/bs";
+import { toast } from "react-hot-toast";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -17,18 +18,10 @@ export const Video = (props) => {
   const navigate = useNavigate();
   const { WATCHLATER_ITEMS } = videoConstant;
   const { watchlaterCase } = useSelector((state) => state.video);
+  const { isLogIn } = useSelector((state) => state.auth);
 
   const { item, ExploreCaseHeight } = props;
-  const {
-    _id,
-    title,
-    views,
-    thumbnail,
-    src,
-    category,
-    creator,
-    videoThumbnail,
-  } = item;
+  const { _id, title, views, thumbnail, category, videoThumbnail } = item;
 
   const checkisWatchLaterImage = isWatchLaterImage(_id, watchlaterCase);
 
@@ -46,7 +39,12 @@ export const Video = (props) => {
       />
 
       <figcaption id={`${ExploreCaseHeight && "auto-height-caption"}`}>
-        <img src={thumbnail} alt="origami" className="holder-img" />
+        <img
+          loading="lazy"
+          src={thumbnail}
+          alt="origami"
+          className="holder-img"
+        />
         <span>
           <h3>{title} </h3>
           <p>
@@ -56,10 +54,16 @@ export const Video = (props) => {
       </figcaption>
       <span
         className="stop-watch"
-        onClick={() => dispatch(ActionCreator(WATCHLATER_ITEMS, item))}
+        onClick={() => {
+          isLogIn
+            ? dispatch(ActionCreator(WATCHLATER_ITEMS, item))
+            : navigate("/login");
+        }}
       >
+        
         {checkisWatchLaterImage ? (
           <BsStopwatchFill size={30} />
+          
         ) : (
           <BsStopwatch size={30} />
         )}

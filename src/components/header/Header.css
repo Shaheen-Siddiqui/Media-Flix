@@ -51,6 +51,7 @@
 
 .right-nav {
     display: none;
+
 }
 
 .media-flix-logo {
@@ -97,5 +98,8 @@
             user-select: none;
             font-family: 'PT Serif', serif;
         }
+        & h3{
+            cursor: pointer;
+        } 
     }
 }

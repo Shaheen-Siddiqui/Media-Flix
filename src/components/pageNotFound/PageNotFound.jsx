@@ -5,7 +5,7 @@ const PageNotFound = () => {
   return (
         <center>
 
-      <img src="../../../public/interactive-404.gif" alt="page not found gif" />
+      <img loading='lazy' src="../../../public/interactive-404.gif" alt="page not found gif" />
         </center>
   )
 }

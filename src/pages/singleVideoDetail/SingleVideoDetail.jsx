@@ -1,6 +1,6 @@
 //External Imports
 import React, { useState } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AiOutlineLike, AiFillLike } from "react-icons/ai";
 import { BsStopwatch, BsStopwatchFill } from "react-icons/bs";
@@ -12,11 +12,10 @@ import { GrEdit } from "react-icons/gr";
 import "./SingleVideoDetail.css";
 import NoteModal from "../../components/modalBox/NoteModal";
 import PlaylistModal from "../../components/modalBox/PlaylistModal";
-import {
-  isWatchLaterImage,
-} from "../../store/redux-operation/video/video-action";
+import { isWatchLaterImage } from "../../store/redux-operation/video/video-action";
 import { ActionCreator } from "../../utils/action-creator";
 import { videoConstant } from "../../store/redux-operation/video/video-constants";
+import toast from "react-hot-toast";
 
 const SingleVideoDetail = () => {
   const { videoID } = useParams();
@@ -25,6 +24,7 @@ const SingleVideoDetail = () => {
   const [showNoteModal, setShowNoteModal] = useState(false);
   const [showPlayListModal, setShowPlayListModal] = useState(false);
   const { ycVideoCase, watchlaterCase } = useSelector((state) => state.video);
+  const { isLogIn } = useSelector((state) => state.auth);
   const selectedVideo = ycVideoCase.find((item) => item?._id == videoID);
 
   const checkisWatchLaterImage = isWatchLaterImage(
@@ -33,6 +33,7 @@ const SingleVideoDetail = () => {
   );
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const checkIsLiked = ycVideoCase.find((item) => item === selectedVideo);
 
@@ -46,9 +47,8 @@ const SingleVideoDetail = () => {
     setEditCommentId(textIndex);
   };
 
-  const playlistHandler = () => {
-    setShowPlayListModal(true);
-  };
+  const playlistHandler = () =>
+    isLogIn ? setShowPlayListModal(true) : navigate("/login");
 
   return (
     <>
@@ -71,6 +71,7 @@ const SingleVideoDetail = () => {
       <div className="detail-case">
         <center>
           <img
+            loading="lazy"
             className="single-video-img"
             height="400"
             title={selectedVideo?.title}
@@ -80,11 +81,11 @@ const SingleVideoDetail = () => {
         <div className="comment-space">
           <div>
             <img
+              loading="lazy"
               style={{ borderRadius: "2rem" }}
               src={selectedVideo?.thumbnail}
               alt={selectedVideo?.title}
             />
-            <h1>{selectedVideo?.title}</h1>
           </div>
         </div>
         <h2>{selectedVideo?.title}</h2>
@@ -93,10 +94,12 @@ const SingleVideoDetail = () => {
           <div>
             <span
               onClick={() =>
-                dispatch(ActionCreator(LIKED_VIDEO, selectedVideo?._id))
+                isLogIn
+                  ? dispatch(ActionCreator(LIKED_VIDEO, selectedVideo?._id))
+                  : navigate("/login")
               }
             >
-              {checkIsLiked.liked ? (
+              {checkIsLiked?.liked ? (
                 <AiOutlineLike size={20} />
               ) : (
                 <AiFillLike size={20} />
@@ -109,7 +112,9 @@ const SingleVideoDetail = () => {
 
             <span
               onClick={() =>
-                dispatch(ActionCreator(WATCHLATER_ITEMS, selectedVideo))
+                isLogIn
+                  ? dispatch(ActionCreator(WATCHLATER_ITEMS, selectedVideo))
+                  : navigate("/login")
               }
             >
               {checkisWatchLaterImage ? (
@@ -119,7 +124,11 @@ const SingleVideoDetail = () => {
               )}
             </span>
 
-            <span onClick={() => setShowNoteModal(true)}>
+            <span
+              onClick={() =>
+                isLogIn ? setShowNoteModal(true) : navigate("/login")
+              }
+            >
               <PiNotepadBold size={20} />
             </span>
           </div>
@@ -133,8 +142,9 @@ const SingleVideoDetail = () => {
               <div key={textIndex}>
                 <div>
                   <img
+                    loading="lazy"
                     style={{ borderRadius: "2rem" }}
-                    src="../../../public/user.png"
+                    src="/user.png"
                     alt={selectedVideo?.title}
                   />
                   <p>{text}</p>
@@ -142,9 +152,12 @@ const SingleVideoDetail = () => {
                 <div className="bin-edit">
                   <button
                     onClick={() =>
-                      dispatch(
-                        ActionCreator(DELETE_NOTE, { selectedVideo, textIndex })
-                      )
+                      {
+                        toast.error("Comment Deleted")
+                        dispatch(
+                          ActionCreator(DELETE_NOTE, { selectedVideo, textIndex })
+                        )
+                      }
                     }
                   >
                     <ImBin size={20} />

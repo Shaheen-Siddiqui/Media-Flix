@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { playlistConstant } from "./playlist-constant";
 import { v4 as uuid } from "uuid";
 
@@ -18,8 +19,7 @@ const initialState = {
           creator: "Tuaha ibn Jalil | Abu Saad | Ali.E",
           liked: false,
           src: "https://youtu.be/YbswnVCO46w?si=h2Ykp0ZryPiINwEM",
-          thumbnail:
-            "https://i.ytimg.com/vi/YbswnVCO46w/maxresdefault.jpg",
+          thumbnail: "https://i.ytimg.com/vi/YbswnVCO46w/maxresdefault.jpg",
           title: "Tips For Waking up in Tahajjud ",
           videoThumbnail:
             "https://i.ytimg.com/vi/YbswnVCO46w/maxresdefault.jpg",
@@ -64,20 +64,24 @@ export const PlaylistReducer = (state = initialState, { type, payload }) => {
       };
 
     case TOGGLE_CHECKBOX:
-      const { toggleId, ItemToAdd } = payload;
+      
+      const { toggleId, ItemToAdd,listName } = payload;
+      const toggleCheckbox = state.playlistCase.map((item) =>
+        toggleId == item._id
+          ? {
+              ...item,
+              listCase: [...item.listCase, ItemToAdd],
+            }
+          : item
+      );
+      toast.success(`${ItemToAdd?.title}  -added into ${listName}`)
       return {
         ...state,
-        playlistCase: state.playlistCase.map((item) =>
-          toggleId == item._id
-            ? {
-                ...item,
-                listCase: [...item.listCase, ItemToAdd],
-              }
-            : item
-        ),
+        playlistCase: toggleCheckbox,
       };
 
     case DELETE_PLAYLIST:
+      toast.error(`Removed from ${payload.listName}`)
       return {
         ...state,
         playlistCase: state.playlistCase.map((item) =>

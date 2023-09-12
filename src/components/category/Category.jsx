@@ -14,6 +14,7 @@ const Category = ({ item }) => {
   return (
     <figure className="figure-img">
       <img
+      loading="lazy"
         onClick={() => {
           dispatch(ActionCreator(SELECTED_CATEGORY, item));
           navigate(`/category/${category}`);

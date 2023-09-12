@@ -51,6 +51,7 @@ const Login = () => {
       <div className="auth-main-case">
         <div className="logo-text">
           <img
+          loading="lazy"
             className="media-flix-authlogo"
             src="https://play-lh.googleusercontent.com/BZlQ2AFMNgtN1Jz4KjuEBPEcEDCB3Tv8YzyNeSqK51jYIsf_NQyC38y4_yoBnaDHE2G_"
             alt="media-flix-logo"

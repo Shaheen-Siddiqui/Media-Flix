@@ -8,6 +8,7 @@ import "./ModalBox.css";
 ("KG ");
 import { ActionCreator } from "../../utils/action-creator";
 import { playlistConstant } from "../../store/redux-operation/playlist/playlist-constant";
+import toast from "react-hot-toast";
 
 const PlaylistModal = ({ setShowPlayListModal, selectedVideo }) => {
   const {
@@ -26,6 +27,7 @@ const PlaylistModal = ({ setShowPlayListModal, selectedVideo }) => {
     event.preventDefault();
     event.stopPropagation();
     dispatch(ActionCreator(CREATE_NEW_PLAYLIST));
+    toast.success(`Playlist Created`)
   };
 
   return (
@@ -45,12 +47,14 @@ const PlaylistModal = ({ setShowPlayListModal, selectedVideo }) => {
                             ActionCreator(TOGGLE_CHECKBOX, {
                               toggleId: _id,
                               ItemToAdd: selectedVideo,
+                              listName
                             })
                           )
                         : dispatch(
                             ActionCreator(DELETE_PLAYLIST, {
                               listedItemId: selectedVideo._id,
                               _id,
+                              listName
                             })
                           )
                     }

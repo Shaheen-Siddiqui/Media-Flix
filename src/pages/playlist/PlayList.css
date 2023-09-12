@@ -20,3 +20,28 @@
         font-family: 'PT Serif', serif;
     }
 }
+
+.navigate-back-btn{
+    background-image: linear-gradient(var(--secondary-color), var(--text-color));
+        border: 0;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.2em;
+        padding: 5px 10px;
+        text-align: center;
+        user-select: none;
+        font-family: 'PT Serif', serif;
+}
+.explore-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 50px;
+}
+#play-img{
+    height: 100%;
+    width: 100%;
+}

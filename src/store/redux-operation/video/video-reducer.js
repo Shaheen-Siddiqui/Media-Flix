@@ -7,11 +7,22 @@ const initialState = {
   ycCategoryCase: videoCategoryList,
   watchlaterCase: [],
   search: "",
-  selectedCategory: {},
+  selectedCategory: { comments: [] },
+  commentText: "",
 };
 
-const { SEARCH, WATCHLATER_ITEMS, SELECTED_CATEGORY, LIKED_VIDEO } =
-  videoConstant;
+const {
+  SEARCH,
+  WATCHLATER_ITEMS,
+  SELECTED_CATEGORY,
+  LIKED_VIDEO,
+  SET_COMMENTED_TEXT,
+  GET_COMMENTED_TEXT,
+  DELETE_NOTE,
+  GET_EDIT_COMMENT,
+  EDIT,
+  EMPTY_CMMENT_SPACE,
+} = videoConstant;
 
 export const VideoReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -34,14 +45,10 @@ export const VideoReducer = (state = initialState, { type, payload }) => {
     case SELECTED_CATEGORY:
       return {
         ...state,
-        selectedCategory: payload,
+        selectedCategory: { ...state.selectedCategory, ...payload },
       };
 
     case LIKED_VIDEO:
-      // const islike=state.ycVideoCase.map((item) =>
-      // item._id == payload)
-
-      // console.log(islike);
       return {
         ...state,
         ycVideoCase: state.ycVideoCase.map((item) =>
@@ -49,6 +56,61 @@ export const VideoReducer = (state = initialState, { type, payload }) => {
             ? { ...item, liked: !item.liked }
             : { ...item, liked: false }
         ),
+      };
+    case SET_COMMENTED_TEXT:
+      return {
+        ...state,
+        commentText: payload,
+      };
+    case GET_COMMENTED_TEXT:
+      return {
+        ...state,
+        ycVideoCase: state.ycVideoCase.map((dbVideo) =>
+          dbVideo._id == payload._id
+            ? { ...dbVideo, comments: [...dbVideo.comments, state.commentText] }
+            : dbVideo
+        ),
+      };
+    case DELETE_NOTE:
+      return {
+        ...state,
+        ycVideoCase: state.ycVideoCase.map((video) =>
+          video._id == payload.selectedVideo._id
+            ? {
+                ...video,
+                comments: video.comments.filter(
+                  (_, videoIndex) => videoIndex !== payload.textIndex
+                ),
+              }
+            : video
+        ),
+      };
+
+    case GET_EDIT_COMMENT:
+      return {
+        ...state,
+        commentText: payload,
+      };
+    case EDIT:
+      const { editCommentId, commentText, selectedVideo } = payload;
+      return {
+        ...state,
+        ycVideoCase: state.ycVideoCase.map((video) =>
+          video._id == selectedVideo._id
+            ? {
+                ...video,
+                comments: video.comments.map((item, itemIndex) =>
+                  itemIndex == editCommentId ? commentText : item
+                ),
+              }
+            : video
+        ),
+       
+      };
+    case EMPTY_CMMENT_SPACE:
+      return {
+        ...state,
+        commentText: "",
       };
 
     default:

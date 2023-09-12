@@ -15,7 +15,3 @@ export function categoryWiseFilter(ycVideoCase, selectedCategory) {
     (item) => item.category === selectedCategory.category
   );
 }
-
-export function isLiked(ycVideoCase, _id) {
-  return ycVideoCase.find((item) => item._id == _id);
-}

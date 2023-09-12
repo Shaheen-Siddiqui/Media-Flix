@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 const WatchLater = () => {
   const { watchlaterCase } = useSelector((state) => state.video);
   return (
-    <div>
+    <div className="explore-cards">
       {!watchlaterCase.length ? (
         <EmptyCaseMessages
           message="Marked any video into Watchlater"

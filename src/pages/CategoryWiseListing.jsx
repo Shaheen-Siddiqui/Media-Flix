@@ -7,6 +7,8 @@ const CategoryWiseListing = () => {
   const { ycVideoCase, selectedCategory } = useSelector((state) => state.video);
 
   const categoryFilter = categoryWiseFilter(ycVideoCase, selectedCategory);
+  
+  
   return (
     <>
       <center>
@@ -16,7 +18,7 @@ const CategoryWiseListing = () => {
           </u>
         </b>
       </center>
-      <div>
+      <div className="explore-cards">
         {categoryFilter.map((item) => {
           return <Video item={item} key={item._id} ExploreCaseHeight />;
         })}

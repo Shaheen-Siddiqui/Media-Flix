@@ -35,71 +35,7 @@ let wajih = "Wajih_Uddin";
 let saad = "Abu_Saad";
 let ahmad = "Ehmad Khan";
 export const YouthclubVideoList = [
-  {
-    _id: uuid(),
-    title: "The Sajdah of Tahajjud | Reminder | Tuaha ibn Jalil",
-    views: "149k",
-    thumbnail: Tuaha_ibn_Jalil,
-    src: "https://youtu.be/fYSpiOb1YWk",
-    category: "Tahajjud prayer",
-    creator: tuaha,
-    videoThumbnail: "https://i.ytimg.com/vi/fYSpiOb1YWk/maxresdefault.jpg",
-  },
-  {
-    _id: uuid(),
-    title: "Raat Ko Uth k Tahajjud Parhny ka Maza | Let's Wake up For Tahajjud",
-    views: "34k",
-    src: "https://youtu.be/x1ILqK1YaSY?si=zhvAcJWEzFD_YXJB",
-    thumbnail: Muhammad_Ali,
-    category: "Tahajjud prayer",
-    videoThumbnail: "https://i.ytimg.com/vi/x1ILqK1YaSY/maxresdefault.jpg",
-    creator: ali,
-  },
-  {
-    _id: uuid(),
-    title:
-      "The Secrets Of Tahajjud || Tuaha Ibn Jalil, Ali E And Abu Saad || #tahajjud Emotional Reminder",
-    views: "55k",
-    src: "https://youtu.be/yHNhR0ZT1JM?si=gDRSJQpEoFkwVKde",
-    thumbnail: Tuaha_ibn_Jalil,
-    category: "Tahajjud prayer",
-    videoThumbnail: "https://i.ytimg.com/vi/yHNhR0ZT1JM/sddefault.jpg",
-    creator: tuaha,
-  },
-  {
-    _id: uuid(),
-    title:
-      "Jis Ghar Main Tahajjud Parhi Jati Hai | Tuaha Ibn Jalil | Beautiful Reminder by Tuaha Ibn Jalil",
-    views: "461k",
-    thumbnail: Tuaha_ibn_Jalil,
-    src: "https://youtu.be/L5Rxa-fTHLs?si=jAc4m_9mhp_vSEKc",
-    category: "Tahajjud prayer",
-    videoThumbnail: "https://i.ytimg.com/vi/L5Rxa-fTHLs/maxresdefault.jpg",
-    creator: tuaha,
-  },
-  {
-    _id: uuid(),
-    title: "Tips For Waking up in Tahajjud ",
-    views: "76k",
-    thumbnail: Abu_Saad,
-    src: "https://youtu.be/YbswnVCO46w?si=h2Ykp0ZryPiINwEM",
-    category: "Tahajjud prayer",
-    videoThumbnail: "https://i.ytimg.com/vi/YbswnVCO46w/maxresdefault.jpg",
-    creator: "Tuaha ibn Jalil | Abu Saad | Ali.E",
-  },
-
-  {
-    _id: uuid(),
-    title: "Sexual Desires! | Pooch Lo with Raja Zia - Ep.8",
-    views: "238k",
-    thumbnail: Raja_Zia,
-    src: "https://youtu.be/CrdzKqcvyeo?si=NtHXH35zg6c3425Z",
-    category: "Haram Relationship In Islam",
-    videoThumbnail:
-      "https://i.ytimg.com/vi/CrdzKqcvyeo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBC5gj0d8wk3vD_d9hRQ5GGX58Wpg",
-    creator: zia,
-  },
-  {
+    {
     _id: uuid(),
     title: "GOLDEN TIP TO END A HARAM RELATIONSHIP",
     views: "97k",
@@ -107,18 +43,10 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/xEAdIwlIrNQ?si=U9VTrEDZjTPq3xv2",
     category: "Haram Relationship In Islam",
     videoThumbnail: "https://i.ytimg.com/vi/UGu34Z0s9PI/maxresdefault.jpg",
+    comments:[],
     creator: tuaha,
   },
-  {
-    _id: uuid(),
-    title: "HOW TO END A HARAM RELATIONSHIP",
-    views: "186k",
-    thumbnail: Raja_Zia,
-    src: "https://youtu.be/9_eSq7k8sP0?si=aW6H1wv0AbzXWEdn",
-    category: "Haram Relationship In Islam",
-    videoThumbnail: "https://i.ytimg.com/vi/9_eSq7k8sP0/sddefault.jpg",
-    creator: zia,
-  },
+
   {
     _id: uuid(),
     title: "This clip can make you end haraam relations.",
@@ -128,7 +56,8 @@ export const YouthclubVideoList = [
     category: "Haram Relationship In Islam",
     videoThumbnail:
       "https://i.ytimg.com/vi/UbWsJXHJ6SY/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-DoACuAiKAgwIABABGHIgTyg9MA8=&rs=AOn4CLAbLPEc_jOlQZD8wOaQwTN_MUBQ2w",
-    creator: ali,
+    comments:[],
+      creator: ali,
   },
   {
     _id: uuid(),
@@ -139,7 +68,8 @@ export const YouthclubVideoList = [
     category: "Haram Relationship In Islam",
     videoThumbnail:
       "https://i.ytimg.com/vi/4b6TYcEO824/sddefault.jpg?v=63e392cb",
-    creator: luqman,
+    comments:[],
+      creator: luqman,
   },
   {
     _id: uuid(),
@@ -150,6 +80,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/BOXUvRGwrWc?si=YypZOw6vNAtt_hOb",
     category: "Haram Relationship In Islam",
     videoThumbnail: "https://i.ytimg.com/vi/BOXUvRGwrWc/hqdefault.jpg",
+    comments:[],
     creator: ehttisham,
   },
   {
@@ -159,6 +90,7 @@ export const YouthclubVideoList = [
     thumbnail: Ali_Ehttisham,
     category: "Haram Relationship In Islam",
     videoThumbnail: "https://i.ytimg.com/vi/D-UkCVH4z64/mqdefault.jpg",
+    comments:[],
     creator: "Tuaha Ibn Jalil feat. Ali E. & Haider Kaiser",
   },
 
@@ -170,6 +102,7 @@ export const YouthclubVideoList = [
     src: "https://www.youtube.com/live/jroERDieleY?si=WY3rirOu8Rlyzf3o",
     category: "Tawakkul",
     videoThumbnail: "https://i.ytimg.com/vi/jroERDieleY/maxresdefault.jpg",
+    comments:[],
     creator: "Tuaha ibn Jalil, Ali E., & M. Ali",
   },
   {
@@ -182,7 +115,8 @@ export const YouthclubVideoList = [
     category: "Tawakkul",
     videoThumbnail:
       "https://i.ytimg.com/vi/lbbii0I-nhc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCUGaLHNFTPswt3IMgQV6QSY_sDqg",
-    creator: zia,
+    comments:[],
+      creator: zia,
   },
   {
     _id: uuid(),
@@ -192,6 +126,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/AXKjjfxNhJk?si=Iw66KT6gcnjl2Hta",
     category: "Tawakkul",
     videoThumbnail: "https://i.ytimg.com/vi/AXKjjfxNhJk/maxresdefault.jpg",
+    comments:[],
     creator: ali,
   },
   {
@@ -202,6 +137,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/N2A8n5Ds1z8?si=Ozot3zwZ5kn3TMyX",
     category: "Tawakkul",
     videoThumbnail: "https://i.ytimg.com/vi/N2A8n5Ds1z8/maxresdefault.jpg",
+    comments:[],
     creator: wajih,
   },
   {
@@ -212,8 +148,92 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/5PqLnStVcUU?si=mw9rCrX5Y0eLYguK",
     category: "Tawakkul",
     videoThumbnail: "https://i.ytimg.com/vi/5PqLnStVcUU/sddefault.jpg",
+    comments:[],
     creator: "Muhammed Ali, Raja Zia, Dr. Israr Ehmad",
   },
+  {
+    _id: uuid(),
+    title: "The Sajdah of Tahajjud | Reminder | Tuaha ibn Jalil",
+    views: "149k",
+    thumbnail: Tuaha_ibn_Jalil,
+    src: "https://youtu.be/fYSpiOb1YWk",
+    category: "Tahajjud prayer",
+    comments:[],
+    creator: tuaha,
+    videoThumbnail: "https://i.ytimg.com/vi/fYSpiOb1YWk/maxresdefault.jpg",
+  },
+  {
+    _id: uuid(),
+    title: "Raat Ko Uth k Tahajjud Parhny ka Maza | Let's Wake up For Tahajjud",
+    views: "34k",
+    src: "https://youtu.be/x1ILqK1YaSY?si=zhvAcJWEzFD_YXJB",
+    thumbnail: Muhammad_Ali,
+    category: "Tahajjud prayer",
+    videoThumbnail: "https://i.ytimg.com/vi/x1ILqK1YaSY/maxresdefault.jpg",
+    comments:[],
+    creator: ali,
+  },
+  {
+    _id: uuid(),
+    title: "HOW TO END A HARAM RELATIONSHIP",
+    views: "186k",
+    thumbnail: Raja_Zia,
+    src: "https://youtu.be/9_eSq7k8sP0?si=aW6H1wv0AbzXWEdn",
+    category: "Haram Relationship In Islam",
+    videoThumbnail: "https://i.ytimg.com/vi/9_eSq7k8sP0/sddefault.jpg",
+    comments:[],
+    creator: zia,
+  },
+  {
+    _id: uuid(),
+    title:
+      "The Secrets Of Tahajjud || Tuaha Ibn Jalil, Ali E And Abu Saad || #tahajjud Emotional Reminder",
+    views: "55k",
+    src: "https://youtu.be/yHNhR0ZT1JM?si=gDRSJQpEoFkwVKde",
+    thumbnail: Tuaha_ibn_Jalil,
+    category: "Tahajjud prayer",
+    videoThumbnail: "https://i.ytimg.com/vi/yHNhR0ZT1JM/sddefault.jpg",
+    comments:[],
+    creator: tuaha,
+  },
+  {
+    _id: uuid(),
+    title:
+      "Jis Ghar Main Tahajjud Parhi Jati Hai | Tuaha Ibn Jalil | Beautiful Reminder by Tuaha Ibn Jalil",
+    views: "461k",
+    thumbnail: Tuaha_ibn_Jalil,
+    src: "https://youtu.be/L5Rxa-fTHLs?si=jAc4m_9mhp_vSEKc",
+    category: "Tahajjud prayer",
+    videoThumbnail: "https://i.ytimg.com/vi/L5Rxa-fTHLs/maxresdefault.jpg",
+    comments:[],
+    creator: tuaha,
+  },
+  {
+    _id: uuid(),
+    title: "Tips For Waking up in Tahajjud ",
+    views: "76k",
+    thumbnail: Abu_Saad,
+    src: "https://youtu.be/YbswnVCO46w?si=h2Ykp0ZryPiINwEM",
+    category: "Tahajjud prayer",
+    videoThumbnail: "https://i.ytimg.com/vi/YbswnVCO46w/maxresdefault.jpg",
+    comments:[],
+    creator: "Tuaha ibn Jalil | Abu Saad | Ali.E",
+  },
+
+  {
+    _id: uuid(),
+    title: "Sexual Desires! | Pooch Lo with Raja Zia - Ep.8",
+    views: "238k",
+    thumbnail: Raja_Zia,
+    src: "https://youtu.be/CrdzKqcvyeo?si=NtHXH35zg6c3425Z",
+    category: "Haram Relationship In Islam",
+    videoThumbnail:
+      "https://i.ytimg.com/vi/CrdzKqcvyeo/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBC5gj0d8wk3vD_d9hRQ5GGX58Wpg",
+    comments:[],
+      creator: zia,
+  },
+
+  ,
 
   //Ramadan
   {
@@ -224,6 +244,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/tDmXpaQnr88?si=uAWLiBNvEce8OH0l",
     category: "Month Of Ramadaan Kareem",
     videoThumbnail: "https://i.ytimg.com/vi/tDmXpaQnr88/maxresdefault.jpg",
+    comments:[],
     creator: ali,
   },
   {
@@ -235,6 +256,7 @@ export const YouthclubVideoList = [
     src: "https://www.youtube.com/live/9LwNjBcs2rA?si=OujoYjLqrpKML4aT",
     category: "Month Of Ramadaan Kareem",
     videoThumbnail: "https://i.ytimg.com/vi/9LwNjBcs2rA/maxresdefault.jpg",
+    comments:[],
     creator: "TJ. Abu Saad & Ali E",
   },
   {
@@ -245,6 +267,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/oFhirRn1xUA?si=sRxeFPs9Y_6HMqc-",
     category: "Month Of Ramadaan Kareem",
     videoThumbnail: "https://i.ytimg.com/vi/kkGMdk8mG8U/sddefault.jpg",
+    comments:[],
     creator: saad,
   },
   {
@@ -256,6 +279,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/XcpanDtv1p0?si=WnkuLlCE6ZLjAi7h",
     category: "Month Of Ramadaan Kareem",
     videoThumbnail: "https://i.ytimg.com/vi/XcpanDtv1p0/sddefault.jpg",
+    comments:[],
     creator: tuaha,
   },
   {
@@ -267,6 +291,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/OulcJdNcUkw?si=_2Yd7cblzH8COQXO",
     category: "Month Of Ramadaan Kareem",
     videoThumbnail: "https://i.ytimg.com/vi/OulcJdNcUkw/sddefault.jpg",
+    comments:[],
     creator: saad,
   },
   {
@@ -278,6 +303,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/jaNk7yVLNzQ?si=-dslgxQOCTRNR8Mr",
     category: "Month Of Ramadaan Kareem",
     videoThumbnail: "https://i.ytimg.com/vi/jaNk7yVLNzQ/maxresdefault.jpg",
+    comments:[],
     creator: ali,
   },
   {
@@ -288,6 +314,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/nEoTxewoCCQ?si=WIZJuAQ2F3zIbJ_P",
     category: "Month Of Ramadaan Kareem",
     videoThumbnail: "https://i.ytimg.com/vi/tJp-SYFl-yU/maxresdefault.jpg",
+    comments:[],
     creator: "Raja Zia ul Haq, Ali E, Abu Saad",
   },
   {
@@ -298,6 +325,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/lGriVRaVIz4?si=-8xhQ1KoMsoB4DqD",
     category: "Month Of Ramadaan Kareem",
     videoThumbnail: "https://i.ytimg.com/vi/XX20fV29sOM/mqdefault.jpg",
+    comments:[],
     creator: "Raja Zia ul Haq, Ali E, Abu Saad, Umer",
   },
 
@@ -310,6 +338,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/CRn76psnslc?si=zzObj8i19cWKOrvx",
     category: "Depression",
     videoThumbnail: "https://i.ytimg.com/vi/CRn76psnslc/maxresdefault.jpg",
+    comments:[],
     creator: "PaperArtDimensions",
   },
   {
@@ -322,7 +351,8 @@ export const YouthclubVideoList = [
     category: "Depression",
     videoThumbnail:
       "https://i.ytimg.com/vi/w3yHI5zr4Ps/maxresdefault.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYciBJKDQwDw==&rs=AOn4CLBDyXzshf07XJrqcuzwThz8FkrEvg",
-    creator: ahmad,
+    comments:[],
+      creator: ahmad,
   },
   {
     _id: uuid(),
@@ -334,7 +364,8 @@ export const YouthclubVideoList = [
     category: "Depression",
     videoThumbnail:
       "https://i.ytimg.com/vi/hzY4AKheZdc/hq720.jpg?sqp=-oaymwEYCJUDENAFSFryq4qpAwoIARUAAIhC0AEB&rs=AOn4CLDgzrOOPhFQVW1lISKfyIsp4fPyQw",
-    creator: "Dr Waseem",
+    comments:[],
+      creator: "Dr Waseem",
   },
   {
     _id: uuid(),
@@ -344,6 +375,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/Gs98Jyq7_i0?si=s0yyosKupep0SOxO",
     category: "Depression",
     videoThumbnail: "https://i.ytimg.com/vi/Gs98Jyq7_i0/mqdefault.jpg",
+    comments:[],
     creator: ali,
   },
 
@@ -356,6 +388,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/qNECffup744?si=F4r4mz3xyiz4e_MS",
     category: "Women Parda",
     videoThumbnail: "https://i.ytimg.com/vi/qNECffup744/maxresdefault.jpg",
+    comments:[],
     creator: ali,
   },
   {
@@ -366,6 +399,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/_ULuMQS8p4M?si=fccw2j_8xwnnRi1c",
     category: "Women Parda",
     videoThumbnail: "https://i.ytimg.com/vi/_ULuMQS8p4M/sddefault.jpg",
+    comments:[],
     creator: luqman,
   },
   {
@@ -376,6 +410,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/bW35LLtolrk?si=BvJIoTDeVsX5K93T",
     category: "Women Parda",
     videoThumbnail: "https://i.ytimg.com/vi/bW35LLtolrk/maxresdefault.jpg",
+    comments:[],
     creator: saad,
   },
   {
@@ -386,6 +421,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/8N1i4FALL2o?si=rF69gRI428Z4hRr4",
     category: "Women Parda",
     videoThumbnail: "https://i.ytimg.com/vi/8N1i4FALL2o/maxresdefault.jpg",
+    comments:[],
     creator: "ali",
   },
 
@@ -399,6 +435,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/8uvV4AtESs8?si=m792c-B2rQ_8WRVe",
     category: "LGBTQ",
     videoThumbnail: "https://i.ytimg.com/vi/8uvV4AtESs8/maxresdefault.jpg",
+    comments:[],
     creator: zia,
   },
   {
@@ -409,6 +446,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/cdZPg7891qw?si=GN1Ozy8kmBAWyFwA",
     category: "LGBTQ",
     videoThumbnail: "https://i.ytimg.com/vi/cdZPg7891qw/sddefault.jpg",
+    comments:[],
     creator: " Sara Asif",
   },
   {
@@ -420,6 +458,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/HztYI1cKIgs?si=oKT8PUCfc87_8iM7",
     category: "LGBTQ",
     videoThumbnail: "https://i.ytimg.com/vi/HztYI1cKIgs/maxresdefault.jpg",
+    comments:[],
     creator: "Sara Asif",
   },
   {
@@ -430,6 +469,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/FY7hi4LAhYw?si=KZAf7bHkAsSd11MJ",
     category: "LGBTQ",
     videoThumbnail: "https://i.ytimg.com/vi/FY7hi4LAhYw/sddefault.jpg",
+    comments:[],
     creator: zia,
   },
   {
@@ -441,6 +481,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/W1TIP9f4Qmo?si=PO8_LG7kG5E-x4_J",
     category: "LGBTQ",
     videoThumbnail: "https://i.ytimg.com/vi/W1TIP9f4Qmo/sddefault.jpg",
+    comments:[],
     creator: zia,
   },
   {
@@ -452,6 +493,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/LPu-TaYuN8Q?si=pga2s1d4rZyIcATt",
     category: "LGBTQ",
     videoThumbnail: "https://i.ytimg.com/vi/LPu-TaYuN8Q/maxresdefault.jpg",
+    comments:[],
     creator: zia,
   },
 
@@ -464,6 +506,7 @@ export const YouthclubVideoList = [
     src: "https://www.youtube.com/live/EeDE09Ip3qY?si=5UcpNM6WorezzQn5",
     category: "Let’s talk about Generation - Z",
     videoThumbnail: "https://i.ytimg.com/vi/EeDE09Ip3qY/maxresdefault.jpg",
+    comments:[],
     creator: tuaha,
   },
   {
@@ -475,6 +518,7 @@ export const YouthclubVideoList = [
     src: "https://www.youtube.com/live/7Kodg0LCYc0?si=REuxIJaBnD3egR-B",
     category: "Let’s talk about Generation - Z",
     videoThumbnail: "https://i.ytimg.com/vi/7Kodg0LCYc0/maxresdefault.jpg",
+    comments:[],
     creator: ali,
   },
   {
@@ -485,6 +529,7 @@ export const YouthclubVideoList = [
     src: "https://www.youtube.com/live/GYQbqi8dT7o?si=yXbynr2uesx5asR6",
     category: "Let’s talk about Generation - Z",
     videoThumbnail: "https://i.ytimg.com/vi/GYQbqi8dT7o/maxresdefault.jpg",
+    comments:[],
     creator: ali,
   },
   {
@@ -495,6 +540,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/KjwUYeLfiHc?si=Y6qx_kQX3WHueuJb",
     category: "Let’s talk about Generation - Z",
     videoThumbnail: "https://i.ytimg.com/vi/KjwUYeLfiHc/maxresdefault.jpg",
+    comments:[],
     creator: luqman,
   },
   {
@@ -505,6 +551,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/kPERFm_I7zE?si=KAHB_nnuRSFZPdgd",
     category: "Let’s talk about Generation - Z",
     videoThumbnail: "https://i.ytimg.com/vi/4mR8RFyl8_8/maxresdefault.jpg",
+    comments:[],
     creator: "Muhammad Ali, Tuaha ibn Jalil, Ali E, Ahmed Khan",
   },
   {
@@ -515,6 +562,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/Zy006WE5oiQ?si=AVWn6NXvyDZTmCSu",
     category: "Let’s talk about Generation - Z",
     videoThumbnail: "https://i.ytimg.com/vi/WJvrejzgDZY/maxresdefault.jpg",
+    comments:[],
     creator: ehttisham,
   },
 
@@ -528,7 +576,8 @@ export const YouthclubVideoList = [
     category: "GUP SHUP!",
     videoThumbnail:
       "https://i.ytimg.com/vi/upISOIyHdsg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCmTXyMMxDVVpiWaFQ9pyUXR2LTgw",
-    creator: "YC Boys",
+    comments:[],
+      creator: "YC Boys",
   },
   {
     _id: uuid(),
@@ -538,6 +587,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/lCE65xOHgx0?si=-Hq4TdHnA_2i5MPT",
     category: "GUP SHUP!",
     videoThumbnail: "https://i.ytimg.com/vi/lCE65xOHgx0/maxresdefault.jpg",
+    comments:[],
     creator: "Dr. Subayyal, Muhammed ali",
   },
   {
@@ -548,6 +598,7 @@ export const YouthclubVideoList = [
     src: "https://www.youtube.com/live/FJo2_0fpMD8?si=BoZoOnijZrCCNVcv",
     category: "GUP SHUP!",
     videoThumbnail: "https://i.ytimg.com/vi/KWoQmhTd39w/maxresdefault.jpg",
+    comments:[],
     creator: "Tuaha ibn Jalil, Ali E., Khurram Alvi & Abu Saad",
   },
   {
@@ -558,6 +609,7 @@ export const YouthclubVideoList = [
     src: "https://youtu.be/TWOka_sjnEY?si=XFWvZkIIAGZ-zN_L",
     category: "GUP SHUP!",
     videoThumbnail: "https://i.ytimg.com/vi/TWOka_sjnEY/hqdefault.jpg",
+    comments:[],
     creator: "Tuaha ibn Jalil | Ali.E",
   },
 ];

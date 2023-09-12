@@ -38,6 +38,7 @@ export const Video = (props) => {
       id={`${ExploreCaseHeight && "auto-height"}`}
     >
       <img
+        loading="lazy"
         className="category-url"
         src={videoThumbnail}
         alt={title}

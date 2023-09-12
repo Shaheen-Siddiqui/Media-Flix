@@ -15,7 +15,7 @@ const Explore = () => {
   const listFilterVideos = filterSearchedVideos(search, ycVideoCase);
 
   return (
-    <div>
+    <div className="explore-cards">
       {listFilterVideos.map((item, index) => {
         return <Video key={index} item={item} ExploreCaseHeight />;
       })}

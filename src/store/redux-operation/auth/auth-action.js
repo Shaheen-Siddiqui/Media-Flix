@@ -5,14 +5,13 @@ import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase } from "firebase/database";
 import { toast } from "react-hot-toast";
 // import { useNavigate } from "react-router-dom";
 
 //Internal Imports
 import { app } from "../../../utils/firebase-utils";
 import { authConstants } from "./auth-constants";
-import { useSelector } from "react-redux";
 import { ActionCreator } from "../../../utils/action-creator";
 //*-----------------------------------------------*//
 

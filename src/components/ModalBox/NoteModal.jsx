@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { ActionCreator } from "../../utils/action-creator";
 import { videoConstant } from "../../store/redux-operation/video/video-constants";
 
-const NoteModal = ({ setShowNoteModal, isEdit, setIsEdit, editCommentId, selectedVideo }) => {
+export const NoteModal = ({ setShowNoteModal, isEdit, setIsEdit, editCommentId, selectedVideo }) => {
   const { commentText } = useSelector((state) => state.video);
   const dispatch = useDispatch();
   const { SET_COMMENTED_TEXT, GET_COMMENTED_TEXT, EDIT, EMPTY_CMMENT_SPACE } =
@@ -55,4 +55,3 @@ const NoteModal = ({ setShowNoteModal, isEdit, setIsEdit, editCommentId, selecte
   );
 };
 
-export default NoteModal;

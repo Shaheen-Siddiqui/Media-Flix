@@ -28,6 +28,12 @@
 .category-url{
     cursor: pointer;
 }
+.explore-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 50px;
+}
 
 @media (min-width:767px) {
     .figure-img {
@@ -37,7 +43,7 @@
 
 @media (min-width:1024px) {
     .figure-img {
-        width: 23%;
+        width: 25%;
     }
 
     #auto-height {

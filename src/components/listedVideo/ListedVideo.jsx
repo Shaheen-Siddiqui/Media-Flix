@@ -1,6 +1,7 @@
 import React from "react";
 import { ImBin } from "react-icons/im";
 import { AiTwotoneFolderOpen } from "react-icons/ai";
+import { toast } from "react-hot-toast";
 
 import "./ListedVideo.css";
 import "../category/Category.css";
@@ -20,6 +21,7 @@ const ListedVideo = ({ item }) => {
     <figure className="figure-img video-container" id="play-case">
       <div className="disable-span">
         <img
+        loading="lazy"
           onClick={() => navigate(`/playlist/${_id}`)}
           id="play-img"
           src="https://img.freepik.com/premium-vector/favourite-playlist-icon-songs-music-player-playlist-logo-vector-ui-icon-neumorphic-ui-ux-white-user-interface-web-button_399089-2894.jpg?w=2000"
@@ -36,7 +38,7 @@ const ListedVideo = ({ item }) => {
       <figcaption className="name-bin-case">
         <h3>{listName} </h3>
         <span
-          onClick={() => dispatch(ActionCreator(DELETE_PLAYLIST_CASE, _id))}
+          onClick={() =>{toast.error("Playlist Deleted") ; dispatch(ActionCreator(DELETE_PLAYLIST_CASE, _id))}}
         >
           <ImBin size={20} />
         </span>

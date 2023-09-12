@@ -37,7 +37,7 @@ const Header = ({ setToggleSidebar }) => {
 
   return (
     <header className="header-case">
-      <div className="logo-bar-case">
+      <div className="logo-bar-case" onClick={()=>navigate('/')}>
         <button
           className="bar-btn"
           onClick={() => setToggleSidebar((toggleSidebar) => !toggleSidebar)}
@@ -45,6 +45,7 @@ const Header = ({ setToggleSidebar }) => {
           <FontAwesomeIcon icon={faBars} />
         </button>
         <img
+        loading="lazy"
           className="media-flix-logo"
           src="https://play-lh.googleusercontent.com/BZlQ2AFMNgtN1Jz4KjuEBPEcEDCB3Tv8YzyNeSqK51jYIsf_NQyC38y4_yoBnaDHE2G_"
           alt="media-flix-logo"
@@ -73,7 +74,7 @@ const Header = ({ setToggleSidebar }) => {
         </div>
       )}
       <div className="right-nav">
-        <h3>Explore</h3>
+        <h3 onClick={()=>navigate('/explore')}>Explore</h3>
         {!isLogIn ? (
           <button onClick={() => navigate("/login")}>Login</button>
         ) : (

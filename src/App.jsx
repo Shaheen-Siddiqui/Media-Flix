@@ -14,10 +14,13 @@ const Login = lazy(() => import("./pages/authentication/Login"));
 const PlayList = lazy(() => import("./pages/playlist/PlayList"));
 const Sidebar = lazy(() => import("./components/sidebar/Sidebar"));
 const SignUp = lazy(() => import("./pages/authentication/SignUp"));
-const VideoListing = lazy(() => import("./pages/videoListing/VideoListing"));
 const SingleVideoDetail = lazy(() =>
   import("./pages/singleVideoDetail/SingleVideoDetail")
 );
+const PageNotFound = lazy(() =>
+  import("./components/pageNotFound/PageNotFound")
+);
+const ListedVideoItem = lazy(() => import("./pages/ListedVideoItem"));
 
 function App() {
   const [toggleSibebar, setToggleSidebar] = useState(false);
@@ -55,11 +58,17 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/explore" element={<Explore />} />
+
             <Route
               path="/category/:categoryName"
               element={<CategoryWiseListing />}
             />
-            <Route path="/video-detail/:videoID" element={<SingleVideoDetail />} />
+            <Route
+              path="/video-detail/:videoID"
+              element={<SingleVideoDetail />}
+            />
+            <Route path="/playlist/:playlistName" element={<ListedVideoItem />} />
+            <Route path="*" element={<PageNotFound />} />
             {/* *****---------PRIVATE ROUTES----------*** */}
             <Route
               path="/"
@@ -77,14 +86,7 @@ function App() {
                 </RedirectAuth>
               }
             />
-            <Route
-              path="/listing"
-              element={
-                <RedirectAuth>
-                  <VideoListing />
-                </RedirectAuth>
-              }
-            />
+           
             <Route
               path="/watchlater"
               element={

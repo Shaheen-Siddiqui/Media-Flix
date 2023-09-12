@@ -10,7 +10,7 @@ import { GrEdit } from "react-icons/gr";
 
 //Internal Imports
 import "./SingleVideoDetail.css";
-import {NoteModal} from "../../components/modalBox/NoteModal";
+//import {NoteModal} from "../../components/modalBox/NoteModal";
 import PlaylistModal from "../../components/modalBox/PlaylistModal";
 import { isWatchLaterImage } from "../../store/redux-operation/video/video-action";
 import { ActionCreator } from "../../utils/action-creator";
@@ -58,7 +58,7 @@ const SingleVideoDetail = () => {
           selectedVideo={selectedVideo}
         />
       )}
-      {showNoteModal && (
+{/*       {showNoteModal && (
         <NoteModal
           setIsEdit={setIsEdit}
           isEdit={isEdit}
@@ -66,7 +66,7 @@ const SingleVideoDetail = () => {
           setShowNoteModal={setShowNoteModal}
           selectedVideo={selectedVideo}
         />
-      )}
+      )} */}
 
       <div className="detail-case">
         <center>

@@ -34,12 +34,12 @@ function App() {
           gutter={8}
           toastOptions={{
             style: {
-              background: "#363636",
-              color: "#fff",
-              fontSize: "2rem",
+              background: "#fff",
+              color: "#363636",
+              fontSize: "1.5rem",
             },
             success: {
-              duration: 3000,
+              duration: 1000,
               theme: {
                 primary: "green",
                 secondary: "black",

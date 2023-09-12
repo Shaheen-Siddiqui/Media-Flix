@@ -1,4 +1,5 @@
 //External Imports
+import toast from "react-hot-toast";
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -10,12 +11,11 @@ import { GrEdit } from "react-icons/gr";
 
 //Internal Imports
 import "./SingleVideoDetail.css";
-//import {NoteModal} from "../../components/modalBox/NoteModal";
+import {NoteModal} from "../../components/modalBox/NoteModal";
 import PlaylistModal from "../../components/modalBox/PlaylistModal";
 import { isWatchLaterImage } from "../../store/redux-operation/video/video-action";
 import { ActionCreator } from "../../utils/action-creator";
 import { videoConstant } from "../../store/redux-operation/video/video-constants";
-import toast from "react-hot-toast";
 
 const SingleVideoDetail = () => {
   const { videoID } = useParams();
@@ -58,7 +58,7 @@ const SingleVideoDetail = () => {
           selectedVideo={selectedVideo}
         />
       )}
-{/*       {showNoteModal && (
+      {showNoteModal && (
         <NoteModal
           setIsEdit={setIsEdit}
           isEdit={isEdit}
@@ -66,7 +66,7 @@ const SingleVideoDetail = () => {
           setShowNoteModal={setShowNoteModal}
           selectedVideo={selectedVideo}
         />
-      )} */}
+      )}
 
       <div className="detail-case">
         <center>

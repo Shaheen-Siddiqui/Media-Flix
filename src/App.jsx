@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 
 import "./App.css";
 import { RedirectAuth } from "./utils/redirectAuth";
-import CategoryWiseListing from "./pages/CategoryWiseListing";
+// import CategoryWiseListing from "./pages/CategoryWiseListing";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const WatchLater = lazy(() => import("./pages/WatchLater"));
@@ -21,6 +21,7 @@ const PageNotFound = lazy(() =>
   import("./components/pageNotFound/PageNotFound")
 );
 const ListedVideoItem = lazy(() => import("./pages/ListedVideoItem"));
+const CategoryWiseListing = lazy(()=>import('./pages/CategoryWiseListing'))
 
 function App() {
   const [toggleSibebar, setToggleSidebar] = useState(false);

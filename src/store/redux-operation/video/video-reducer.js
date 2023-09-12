@@ -1,6 +1,7 @@
 import { YouthclubVideoList } from "../../../database/videoData";
 import { videoCategoryList } from "../../../database/categoryData";
 import { videoConstant } from "./video-constants";
+import { toast } from "react-hot-toast";
 
 const initialState = {
   ycVideoCase: YouthclubVideoList,
@@ -32,11 +33,21 @@ export const VideoReducer = (state = initialState, { type, payload }) => {
         search: payload,
       };
     case WATCHLATER_ITEMS:
-      const isInsideWatchLater =
-        state.watchlaterCase.find((item) => item._id == payload?._id) ==
-        undefined
-          ? [...state.watchlaterCase, payload]
-          : state.watchlaterCase.filter((item) => item._id != payload._id);
+      let isInsideWatchLater = state.watchlaterCase.find(
+        (item) => item._id == payload?._id
+      );
+
+      if (isInsideWatchLater == undefined) {
+        isInsideWatchLater = [...state.watchlaterCase, payload];
+        toast.success("added into watchlater");
+      } else {
+        isInsideWatchLater = state.watchlaterCase.filter(
+          (item) => item._id != payload._id
+        );
+        toast.success("Removed from watchlater");
+      }
+      // undefined
+      //   ? [...state.watchlaterCase, payload]
 
       return {
         ...state,
@@ -105,7 +116,6 @@ export const VideoReducer = (state = initialState, { type, payload }) => {
               }
             : video
         ),
-       
       };
     case EMPTY_CMMENT_SPACE:
       return {

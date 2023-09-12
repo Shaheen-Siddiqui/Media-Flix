@@ -7,7 +7,9 @@
     background-color: rgb(0, 0, 0, 0.6);
     z-index: 2
 }
-
+.check-padding{
+    margin: 1rem 0;
+}
 .modal-content {
     position: relative;
     height: fit-content;
@@ -38,6 +40,13 @@
     font-size: 1.5rem;
     font-weight: bolder;
     justify-content: space-between;
+    position: relative;
+
+    & span{
+position: absolute;
+right:0;
+top:0
+    }
 }
 
 #playlist-btn {
@@ -70,6 +79,7 @@
 .checkbox-wrapper-1 .checkbox-wrapper-1 ::after,
 .checkbox-wrapper-1 ::before {
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .checkbox-wrapper-1 [type="checkbox"].substituted {

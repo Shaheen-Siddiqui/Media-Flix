@@ -1,16 +1,15 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { ImCross } from "react-icons/im";
 import { useDispatch, useSelector } from "react-redux";
 
-//External Imports:-
-import "../../pages/authentication/Authentication.css";
+//Ixternal Imports:-
+// import "../../pages/authentication/Authentication.css";
 import "./ModalBox.css";
-("KG ");
 import { ActionCreator } from "../../utils/action-creator";
 import { playlistConstant } from "../../store/redux-operation/playlist/playlist-constant";
-import toast from "react-hot-toast";
 
-const PlaylistModal = ({ setShowPlayListModal, selectedVideo }) => {
+export const PlaylistModal = ({ setShowPlayListModal, selectedVideo }) => {
   const {
     ADD_CONTAINER,
     CREATE_NEW_PLAYLIST,
@@ -100,4 +99,3 @@ const PlaylistModal = ({ setShowPlayListModal, selectedVideo }) => {
   );
 };
 
-export default PlaylistModal;

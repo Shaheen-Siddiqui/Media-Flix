@@ -11,10 +11,10 @@ import { GrEdit } from "react-icons/gr";
 
 //Internal Imports
 import "./SingleVideoDetail.css";
+import { ActionCreator } from "../../utils/action-creator";
 import { NoteModal } from "../../components/modalContainer/NoteModal";
 import { PlaylistModal } from "../../components/modalContainer/PlaylistModal";
 import { isWatchLaterImage } from "../../store/redux-operation/video/video-action";
-import { ActionCreator } from "../../utils/action-creator";
 import { videoConstant } from "../../store/redux-operation/video/video-constants";
 
 const SingleVideoDetail = () => {

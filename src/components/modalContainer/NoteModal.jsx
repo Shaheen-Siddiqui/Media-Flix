@@ -2,7 +2,7 @@ import React from "react";
 import { ImCross } from "react-icons/im";
 
 import "./ModalBox.css";
-// import "../../pages/authentication/Authentication.css";
+import "../../pages/authentication/Authentication.css";
 import { useDispatch, useSelector } from "react-redux";
 import { ActionCreator } from "../../utils/action-creator";
 import { videoConstant } from "../../store/redux-operation/video/video-constants";

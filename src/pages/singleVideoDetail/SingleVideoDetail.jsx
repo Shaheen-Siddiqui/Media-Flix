@@ -11,8 +11,8 @@ import { GrEdit } from "react-icons/gr";
 
 //Internal Imports
 import "./SingleVideoDetail.css";
-import {NoteModal} from "../../components/modalBox/NoteModal";
-import PlaylistModal from "../../components/modalBox/PlaylistModal";
+import { NoteModal } from "../../components/modalBox/NoteModal";
+import {PlaylistModal} from "../../components/modalBox/PlaylistModal";
 import { isWatchLaterImage } from "../../store/redux-operation/video/video-action";
 import { ActionCreator } from "../../utils/action-creator";
 import { videoConstant } from "../../store/redux-operation/video/video-constants";
@@ -151,14 +151,12 @@ const SingleVideoDetail = () => {
                 </div>
                 <div className="bin-edit">
                   <button
-                    onClick={() =>
-                      {
-                        toast.error("Comment Deleted")
-                        dispatch(
-                          ActionCreator(DELETE_NOTE, { selectedVideo, textIndex })
-                        )
-                      }
-                    }
+                    onClick={() => {
+                      toast.error("Comment Deleted");
+                      dispatch(
+                        ActionCreator(DELETE_NOTE, { selectedVideo, textIndex })
+                      );
+                    }}
                   >
                     <ImBin size={20} />
                   </button>
